@@ -1,8 +1,9 @@
-import { Button, Htag, Ptag, Rating, Tag} from '../components';
+import { Button, Htag, Ptag, Rating, Tag } from '../components';
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
+import { Layout, withLayout } from '../layout/Layout';
 
-export default function Home():JSX.Element {
+function Home(): JSX.Element {
   const [rating, setRating] = useState<number>(0)
   return (
     <>
@@ -14,7 +15,9 @@ export default function Home():JSX.Element {
       <Ptag size='p14'>Some P-text</Ptag>
       <Tag size="s" color='red'> Hello world</Tag>
       <Tag size="s" color='green'> Hello world</Tag>
-      <Rating rating={rating} isEditable setRating={setRating}/>
+      <Rating rating={rating} isEditable setRating={setRating} />
     </>
   );
 }
+
+export default withLayout(Home);

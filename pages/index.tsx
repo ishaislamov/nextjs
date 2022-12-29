@@ -7,7 +7,7 @@ import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
 
 function Home({ menu }:HomeProps): JSX.Element {
-  const [rating, setRating] = useState<number>(0)
+  const [rating, setRating] = useState<number>(0);
   return (
     <>
       <Htag tag='h1'>Some text</Htag>
@@ -19,9 +19,6 @@ function Home({ menu }:HomeProps): JSX.Element {
       <Tag size="s" color='red'> Hello world</Tag>
       <Tag size="s" color='green'> Hello world</Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
-      <ul>
-        {menu.map((m) => (<li>{m._id.secondCategory}</li>))}
-      </ul>
     </>
   );
 }
